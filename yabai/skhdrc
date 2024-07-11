@@ -1,0 +1,94 @@
+#------------------------------------------------------------------------------------
+# MY COMMANDS
+#------------------------------------------------------------------------------------
+# open iterm2
+cmd-return : open -na /Applications/iTerm.app
+
+# balance out tree of windows (resize to occupy same area)
+shift + alt - 0 : yabai -m space --balance
+
+# switch displays. Although I tend to use default ctrl - {#} to switch
+alt + cmd - 1 : yabai -m display --focus $(yabai -m query --displays --space 1 | jq '.index'); skhd -k "ctrl - 1"
+alt + cmd - 2 : yabai -m display --focus $(yabai -m query --displays --space 2 | jq '.index'); skhd -k "ctrl - 2"
+alt + cmd - 3 : yabai -m display --focus $(yabai -m query --displays --space 3 | jq '.index'); skhd -k "ctrl - 3"
+alt + cmd - 4 : yabai -m display --focus $(yabai -m query --displays --space 4 | jq '.index'); skhd -k "ctrl - 4"
+alt + cmd - 5 : yabai -m display --focus $(yabai -m query --displays --space 5 | jq '.index'); skhd -k "ctrl - 5"
+alt + cmd - 6 : yabai -m display --focus $(yabai -m query --displays --space 6 | jq '.index'); skhd -k "ctrl - 6"
+alt + cmd - 7 : yabai -m display --focus $(yabai -m query --displays --space 7 | jq '.index'); skhd -k "ctrl - 7"
+alt + cmd - 8 : yabai -m display --focus $(yabai -m query --displays --space 8 | jq '.index'); skhd -k "ctrl - 8"
+
+# change window focus within space
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+alt - space: yabai -m window --toggle split
+alt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+# minimize window
+alt - m : yabai -m window --minimize
+# maximize a window
+shift + alt - m : yabai -m window --toggle zoom-fullscreen
+# close window
+alt - x : yabai -m window --close
+# fast focus desktop
+alt - tab : yabai -m space --focus recent
+
+# move window to space
+alt - 1 : yabai -m window --space 1
+alt - 2 : yabai -m window --space 2
+alt - 3 : yabai -m window --space 3
+alt - 4 : yabai -m window --space 4
+alt - 5 : yabai -m window --space 5
+alt - 6 : yabai -m window --space 6
+alt - 7 : yabai -m window --space 7
+alt - 8 : yabai -m window --space 8
+
+# -----------------------------------------------------------------------------
+# EXTERNAL DISPLAY ------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# change focus between external displays
+alt - s : yabai -m display --focus west
+alt - g : yabai -m display --focus east
+
+# move window to display left and right
+ctrl + alt - s : yabai -m window --display west; yabai -m display --focus west;
+ctrl + alt - g : yabai -m window --display east; yabai -m display --focus east;
+# -----------------------------------------------------------------------------
+
+
+# -----------------------------------------------------------------------------
+# MOVING WINDOWS --------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# move window and split
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - l : yabai -m window --warp east
+
+# stack windows on top of each other
+shift + alt - j : yabai -m window --stack south
+shift + alt - k : yabai -m window --stack north
+shift + alt - h : yabai -m window --stack west
+shift + alt - l : yabai -m window --stack east
+
+# swap windows
+cmd + alt - j : yabai -m window --swap south
+cmd + alt - k : yabai -m window --swap north
+cmd + alt - h : yabai -m window --swap west
+cmd + alt - l : yabai -m window --swap east
+# -----------------------------------------------------------------------------
+
+# switch layout
+shift + alt + ctrl - f : yabai -m space --layout float
+shift + alt + ctrl - b : yabai -m space --layout bsp
+shift + alt + ctrl - s : yabai -m space --layout stack
+
+# stop/start/restart yabai
+ctrl + alt - q : yabai --stop-service
+ctrl + alt - s : yabai --start-service
+ctrl + alt - r : yabai --restart-service
+
+# stop/start/restart yabai
+shift + alt - q : skhd --stop-service
+shift + alt - s : skhd --start-service
+shift + alt - r : skhd --restart-service
