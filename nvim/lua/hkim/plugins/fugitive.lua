@@ -9,15 +9,10 @@ return {
         },
     },
     {
-        'sindrets/diffview.nvim',
+        "sindrets/diffview.nvim",
         keys = {
             {
-                '<leader>gd',
-                function()
-                    require('diffview').open()
-                end,
-                mode='n',
-                desc = 'Git diff view',
+                '<leader>gd', function() require("diffview").open() end, mode="n", desc = "Git Diff View"
             },
         },
     },

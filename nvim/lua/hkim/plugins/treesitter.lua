@@ -13,7 +13,6 @@ return{
                 "bash",
                 "bibtex",
                 "gitignore",
-                "jq",
                 "json",
                 "latex",
                 "markdown",

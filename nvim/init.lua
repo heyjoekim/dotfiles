@@ -1,8 +1,5 @@
 require("hkim")
-require("config.lazy")
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+require("hkim.lazy")
 
 local readmes = vim.api.nvim_create_augroup("Markdown Wrap Settings", {clear = true})
 

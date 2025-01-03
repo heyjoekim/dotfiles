@@ -1,2 +1,2 @@
-require("hkim.remap")
-require("hkim.set")
+require("hkim.options")
+require("hkim.remaps")
