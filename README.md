@@ -1,5 +1,5 @@
 # configs
-My configs files for important programs (Mainly for backup purposes)
+My configs files for important programs (Mainly for backup purposes). Available for anybody to copy.
 
 **Changes since last update:**
 - Changed terminal emulator iTerm2 to ghostty
